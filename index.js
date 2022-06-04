@@ -35,7 +35,11 @@ async function run() {
             res.send(events);
           });
  
-
+        app.post('/event', async (req, res) => {
+            const event = req.body;
+            const result = await eventCollection.insertOne(event);
+            res.send(result)
+})
 
 
 
